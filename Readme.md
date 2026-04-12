@@ -1,4 +1,4 @@
-# 📬 Mini Message Board
+# Mini Message Board
 
 A simple yet clean **message board web app** built using **Node.js, Express, and EJS**, where users can view and add messages. This project follows a structured backend approach with proper routing, middleware usage, and error handling.
 
@@ -81,7 +81,7 @@ node app.js
 
 ---
 
-## sage
+## Usage
 
 * Open browser → `http://localhost:3030`
 * View all messages
