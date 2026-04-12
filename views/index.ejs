@@ -1,0 +1,9 @@
+<body>
+    <ul>
+        <% messages.forEach((message)=>{%>
+            <li> <strong> User </strong> : <%=message.user%> </li>
+            <li> <strong> Message </strong> : <%=message.text%> </li>
+            <li> <strong> Time Stamp </strong> : <%=message.added%> </li>
+        <%})%>
+    </ul>
+</body>
