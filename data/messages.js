@@ -11,6 +11,11 @@ const messages = [
   },
 ];
 
+ function getMessageByAuthor(authorName) {
+  return messages.find((message) => message.user == authorName);
+}
+
 module.exports = {
   messages,
+  getMessageByAuthor,
 };
