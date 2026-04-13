@@ -4,7 +4,7 @@ const path = require("path");
 const { indexRouter } = require("./router/indexRouter.js");
 const { messageRouter } = require("./router/messageRouter.js");
 
-const PORT = 3030;
+const PORT = process.env.PORT || 3030;
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
