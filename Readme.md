@@ -1,6 +1,6 @@
 # Mini Message Board
 
-A simple yet clean **message board web app** built using **Node.js, Express, and EJS**, where users can view and add messages. This project follows a structured backend approach with proper routing, middleware usage, and error handling.
+A simple yet clean **message board web app** built using **Node.js, Express, EJS, and PostgreSQL**, where users can view and add messages. This project now supports **persistent data storage** using a PostgreSQL database instead of in-memory arrays.
 
 ---
 
@@ -9,14 +9,17 @@ A simple yet clean **message board web app** built using **Node.js, Express, and
 * Add new messages
 * View all messages on homepage
 * Open individual messages
+* Persistent storage using PostgreSQL
+* Server-side validation for user input
 * Centralized error handling middleware
-* Navigation with "Back to Home" button
+* Clean routing and MVC structure
 
 ---
 
 ## Tech Stack
 
 * **Backend:** Node.js, Express
+* **Database:** PostgreSQL (pg)
 * **Templating Engine:** EJS
 * **Frontend:** HTML, CSS
 * **Middleware:** Express built-in middleware + custom error handler
@@ -35,8 +38,9 @@ Mini-Message-Board/
 │   └── messages.js
 │
 ├── routes/
-│   ├── indexRouter.js
-│   └── messageRouter.js
+│   ├── pool.js
+│   ├── query.js
+│   └── populatedb.js
 │
 ├── views/
 │   ├── index.ejs
