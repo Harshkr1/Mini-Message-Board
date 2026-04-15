@@ -12,11 +12,11 @@
   <ul>
     <% messages.forEach((message) => { %>
       <li>
-        <p><strong>User:</strong> <%= message.user %></p>
-        <p><strong>Message:</strong> <%= message.text %></p>
-        <p><strong>Time:</strong> <%= message.added %></p>
+        <p><strong>User:</strong> <%= message.username %></p>
+        <p><strong>Message:</strong> <%= message.message %></p>
+        <p><strong>Time:</strong> <%= message.time %></p>
       </li>
-      <a href="/open/<%= message.user %>" class="open-btn">Open</a>
+      <a href="/open/<%= message.username %>" class="open-btn">Open</a>
     <% }) %>
   </ul>
 

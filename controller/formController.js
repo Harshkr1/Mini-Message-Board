@@ -1,14 +1,14 @@
-const { messages } = require("../data/messages.js");
+const db = require("../data/query");
 
 function showFormPage(request, response) {
   response.render("form");
 }
 
-function addMessage(request, response) {
+async function addMessage(request, response) {
   const authorName = request.body.authorName;
   const messageText = request.body.messageText;
 
-  messages.push({ text: messageText, user: authorName, added: new Date() });
+  await db.postMessage({ authorName, messageText });
 
   response.redirect("/");
 }

@@ -1,12 +1,13 @@
-const { messages, getMessageByAuthor } = require("../data/messages.js");
+const db = require("../data/query");
 
-function showIndexPage(request, response) {
+async function showIndexPage(request, response) {
+  const messages = await db.getAllMessages();
   response.render("index", { messages: messages });
 }
 
- function openMessage(request, response) {
-  const  authorName  = request.params.messageUser;
-  const message =  getMessageByAuthor(authorName);
+async function openMessage(request, response) {
+  const authorName = request.params.messageUser;
+  const message = await db.getMessageByAuthor(authorName);
 
   if (!message) {
     return response.status(404).send("Message not found");

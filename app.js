@@ -16,10 +16,8 @@ app.use(express.static("public"));
 app.use("/", indexRouter);
 app.use("/new", messageRouter);
 
-app.use((req, res, next) => {
-  const err = new Error("PAGE NOT FOUND");
-  err.statusCode = 404;
-  next(err);
+app.use((req, res) => {
+  res.status(404).send("Page Not Found");
 });
 
 app.use((err, req, res, next) => {
